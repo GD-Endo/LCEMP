@@ -15,7 +15,7 @@ LCEMP is a Minecraft Legacy Console Edition source fork focused on LAN and custo
 - Keyboard and mouse support.
 - Gamma/fullscreen fixes.
 
-### Minigames / Bedwars Foundation
+### Minigames / Bedwars Foundation (Currently very broken and just a POC)
 - Main menu **LCE Minigames** flow.
 - Minigames hub flow for create/join style gameplay.
 - Bedwars-oriented queue foundation:
