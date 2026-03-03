@@ -5,6 +5,7 @@ LCEMP is a Minecraft Legacy Console Edition source fork focused on LAN and custo
 ## Notes
 - If you reuse this fork in other LCE-based projects, credit **notpies**.
 - Please know most of this stuff is currently half baked and just POC.
+- Feel free to create pull requests to add QoL updates and fixes to get this repo up to date with the others.
 
 ## Current Features
 - Fully working LAN multiplayer hosting/joining.
@@ -81,18 +82,14 @@ bedwars=127.0.0.1:25566|Bedwars Match
 practice=127.0.0.1:25567|Practice
 ```
 
-## Required Assets
-See previous README list and ensure all media/resource directories are present before building.
-
 ## Install
-1. Get required assets.
-2. Replace your `Minecraft.Client` and `Minecraft.World` source folders with this fork.
-3. Build.
-4. Run with launch arguments as needed.
+1. Clone source
+2. Build.
+3. Run with launch arguments as needed.
 
 ## Contributing
 - Open a PR for fixes/features.
 - Valid changes will be reviewed and merged.
 
 ## Author
-notpies
+Physics + notpies
