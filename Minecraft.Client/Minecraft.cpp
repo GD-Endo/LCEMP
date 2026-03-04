@@ -173,6 +173,7 @@ Minecraft::Minecraft(Component *mouseComponent, Canvas *parent, MinecraftApplet 
 	//lastTickTime = System::currentTimeMillis();
 	recheckPlayerIn = 0;
 	running = true;
+	showFpsCounter = false;
 	unoccupiedQuadrant = -1;
 
 	Stats::init();
@@ -1481,7 +1482,7 @@ void Minecraft::run_middle()
 						if(g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_DROP))
 							localplayers[i]->ullButtonsPressed|=1LL<<MINECRAFT_ACTION_DROP;
 
-						if(g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_CRAFTING))
+						if(g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_CRAFTING) || g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_CRAFTING_ALT))
 							localplayers[i]->ullButtonsPressed|=1LL<<MINECRAFT_ACTION_CRAFTING;
 
 						if(g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_PAUSE))
@@ -1494,7 +1495,15 @@ void Minecraft::run_middle()
 							localplayers[i]->ullButtonsPressed|=1LL<<MINECRAFT_ACTION_RENDER_THIRD_PERSON;
 
 						if(g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_DEBUG_INFO))
+						{
 							localplayers[i]->ullButtonsPressed|=1LL<<MINECRAFT_ACTION_GAME_INFO;
+														localplayers[i]->ullButtonsPressed|=1LL<<MINECRAFT_ACTION_RENDER_DEBUG;
+						}
+
+						if(g_KBMInput.IsKeyPressed(VK_F4))
+						{
+							showFpsCounter = !showFpsCounter;
+						}
 
 						int wheel = g_KBMInput.GetMouseWheel();
 						if (wheel > 0)

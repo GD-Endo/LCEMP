@@ -456,6 +456,9 @@ void SoundEngine::updateMiles()
 
 		if ( SoundInfo.Status != MILESEVENT_SOUND_STATUS_COMPLETE )
 		{
+			if (SoundInfo.Sample == NULL)
+				continue;
+
 			// apply the master volume
 			// watch for the 'special' volume levels
 			bool isThunder = false;
